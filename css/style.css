@@ -20,7 +20,7 @@
     }
     /*-- banner --*/
     .banner{
-    	background: url(../images/giphy.gif) no-repeat 0px 0px;
+    	background: url(../images/giphy.png) no-repeat 0px 0px;
         background-size: cover;
     	min-height:750px;
     }
