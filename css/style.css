@@ -410,6 +410,11 @@
         right: 41%;
         bottom: 0%;
     }
+    .gal {
+        min-height: 280px;
+        min-width: 280px;
+        overflow: hidden;
+    }
     p.para {
         width: 50%;
         margin: 0 auto;
@@ -2191,7 +2196,8 @@
     .subscribe input[type="email"] {
         width: 71%;
     }
-    }
+    
+
     @media(max-width:640px){
     .agileits_w3layouts_banner_info h3 {
         font-size: 1.6em;
@@ -2212,7 +2218,7 @@
         width: 85%;
         padding: 2em 2em;
     }	
-    }
+    
     @media(max-width:600px){
     	.subscribe input[type="email"] {
         width: 70%;
@@ -2342,6 +2348,7 @@
     .gallery-grid {
         width: 100%;
     }
+
     .projects-w3lgrids {
         width: 100%;
     }
