@@ -18,6 +18,9 @@
     body{
     	background:#FFFFFF;
     }
+    .banner.jarallax {
+        height: 100vh !important;
+    }
     /*-- banner --*/
     .banner{
     	background: url(../images/giphy.jpg) no-repeat 0px 0px;
