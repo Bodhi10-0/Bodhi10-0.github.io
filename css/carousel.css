@@ -1,0 +1,9 @@
+.carousel-items div img{
+	max-height: 200px;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+.sponsors-carousel{
+	position: relative;
+}
