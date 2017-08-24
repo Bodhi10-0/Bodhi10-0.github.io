@@ -75,7 +75,7 @@
 								</div>
 							</li>
 						</ul>
-						<!-- <ul id="countdown" class="col-md-3 pull-right"></ul>
+						<! <ul id="countdown" class="col-md-3 pull-right"></ul>
 					</div>
 				</section>
 			</div>
@@ -316,18 +316,18 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div class="col-md-4 news-w3lgrids">
+					<div class="col-md-4 news-w3lgrids">
 						<div class="news-gridtext">
 							<div class="news-w3img">
 								<a href="#" data-toggle="modal" data-target="#myModal5"><img src="images/general/whale.png" class="img-responsive zoom-img" alt=""/></a>
 							</div>
 							<div class="news-w3imgtext">
-								<h5 class="w3-agilep">&nbsp;&nbsp;Fun Dare Contest&nbsp;</h5>
-								<h4><a href="#" data-toggle="modal" data-target="#myModal5">BLUE WHALE</a></h4> 
+								<h5 class="w3-agilep">&nbsp;&nbsp;MINUTE TO WIN IT&nbsp;</h5>
+								<h4><a href="#" data-toggle="modal" data-target="#myModal5">MINUTE TO WIN IT</a></h4> 
 								<p>Its time for some real fun.. U Guys Ready???</p> 
 							</div>
 						</div>
-					</div> -->
+					</div>
 					<div class="col-md-4 news-w3lgrids">
 						<div class="news-gridtext">
 							<div class="news-w3img">
@@ -379,6 +379,202 @@
 					</div>
 				</div>
 			</div>
+
+			<style type="text/css">
+				html,body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.carousal {
+  max-width: 768px;
+/*   min-width: 350px; */
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+  margin: auto;
+}
+
+img {
+  position: absolute;
+/*   float: left; */
+  top: 0;
+  left: 100%;
+  visibility: hidden;
+  transition: all 0.7s;
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  pading: 0 2em;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  bottom: 0;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  z-index: 200;
+  outline: 0;
+}
+.btn p {
+  margin: 0 1em;
+}
+.btn-left {
+  left: 0;
+  background: linear-gradient(to right,rgba(0,0,0,0.6),rgba(255,255,255,0));
+}
+.btn-right {
+  right: 0;
+  background: linear-gradient(to left,rgba(0,0,0,0.6),rgba(255,255,255,0));
+}
+
+			</style>
+			<script type="text/javascript">
+				// How to disable button temporarily
+
+// var imgArray = ["https://unsplash.it/1366/768","http://placekitten.com/1367/768","http://placekitten.com/1367/770"];
+// $(function() {
+//   // var images = $("img");
+//   var i = 0;
+//   // var images = document.getElementsByTagName("img");
+//   var images = $("img");
+//   var image = document.getElementsByTagName("img");
+//   var y;
+//   function chgImg() {
+//     if(x > images.length-1) { x=0; }
+//     // for(i=0;i<images.length;i++) {
+//     //   images[i].style.display = "none";
+//     //   images[i].style.left = "100%";
+//     //   // images[i].css("display","none");
+//     //   // if(images[i].classList.contains("active")) {
+//     //   //   images[i].classList.remove("active");
+//     //   // }
+//     // }
+//     images.each(function(i,el) {
+//       // $(this).offset({left: 0});
+//       $(this).hide();
+//     });
+    
+//     image[x].style.display = "block";
+//     image[x].style.left = "0px";
+//     // image[x].classList.add("active");
+    
+//     x++;
+//     setTimeout(chgImg,3000);
+//   }
+//   chgImg();
+// });
+
+// function nextImg() {
+//   for(j=0;j<images.length;j++) {
+//     if(images[j].style.display ==  "block") {
+//       images[j].style.display = "none";
+//       if(j != 2) {
+//         images[j+1].stytle.display = "block";
+//       }
+//       images[0].stytle.display = "block";
+//     }
+//   }
+
+// }
+// function prevImg() {
+
+// }
+$(function() {
+  var image = $("img:first-child");
+  var images = $("img");
+  var zIndex = 100;
+  image.css({"visibility":"visible","left":"0"});
+  for(j=0;j<images.length;j++) {
+    images.css("z-index",zIndex);
+    console.log(zIndex);
+    zIndex++;
+  }
+});
+
+
+$("#rightButton").on("mouseup",function(event) {
+  var j;
+  var img = document.getElementsByTagName("img");
+  for(j=0;j<img.length;j++) {
+    img[j].style.left = "100%";
+  }
+  for(j=0;j<img.length;j++) {
+    if(img[j].style.visibility == "visible") {
+      img[j].style.left = "-100%";
+      img[j].style.visibility = "hidden";
+      if(j == img.length-1) {
+        img[0].style.visibility = "visible";
+        img[0].style.left = "0";
+        break;
+      } else {
+        img[j+1].style.visibility = "visible";
+        img[j+1].style.left = "0";
+        break;
+      }
+    }
+  }
+    // var img = $("img");
+    // img.each(function(i,el) {
+    //   if($(this).css("display","block")) {
+    //     $(this).animate({left: "100%"},400);
+    //     $(this).css("display","none");
+    //     $(this).next().css("display","block").animate({left: "0"},600);
+    //   }
+    // });
+});
+
+
+
+
+
+$("#leftButton").on('click dblclick',function() {
+  var img = document.getElementsByTagName("img");
+  
+  for(j=0;j<img.length;j++) {
+    img[j].style.left = "-100%";
+  }
+  
+  for(var j=0;j<img.length;j++) {
+    if(img[j].style.visibility == "visible") {
+      img[j].style.left = "100%";
+      img[j].style.visibility = "hidden";
+      if(j == 0) {
+        img[img.length-1].style.visibility = "visible";
+        img[2].style.left = "0";
+        break;
+      } else {
+        img[j-1].style.visibility = "visible";
+        img[j-1].style.left = "0px";
+        break;
+      }
+    }
+  }
+});
+
+
+
+
+			</script>
+			<div class="carousal">
+			  <img src="https://unsplash.it/1366/768" width="100%" height="100%">
+			  <img src="http://placekitten.com/1367/768" width="100%" height="100%">
+			  <img src="https://unsplash.it/1367/768" width="100%" height="100%">
+			  <button class="btn btn-left" id="leftButton"><p>&#10094;</p></button>
+			  <button class="btn btn-right" id="rightButton"><p>&#10095;</p></button>
+			</div>
+
+
 			<div class="w3-agile-footer">
 				<div class="container">
 					<div class="footer-grids">
@@ -546,13 +742,27 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								BLUE WHALE - Games, Tattoos, Puzzles
+								MINUTE TO WIN IT
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
 							</div>
 							<section>
 								<div class="modal-body">
 									<!-- <img src="images/drone.jpg" alt=" " class="img-responsive" /> -->
-									<p>Its time for some real fun<br>Venue: R &amp; D Block<br>Date: 25th August 2017<br>Coordinators: Albin Abraham (8547296614)<br>John Mathew (9745703277)</p>
+									<p>RULES
+									<ul>
+										<li>Cash prizes will be awarded to the top 2 teams and complementary prizes are given to every team.</li>
+										<li>Registration fee of   ₹100 is collected from each team</li>
+										<li>Registration  time begins at 9:30 am and closes at 10:30 am.Competition starts at  10 :30 am sharp.</li>
+										<li>First 30 registered teams are selected.</li>
+										<li>Each team must include 2 participants.</li>
+										<li>2 teams are played at a time. The team which completes the task in least time is selected for the next level. If both team fails a challenge, they will be given one more attempt.</li>
+										<li>Each challenge must be completed within the required amount of time in order to advance to the next round.</li>
+										<li>For individual challenges, any member of the team can be selected to complete the challenge.</li>
+										<li>If a team is found to be cheating in any way to complete a challenge, they will be automatically eliminated from the entire competition.</li>
+										<li>All decisions by the coordinators are final.</li>
+										<li>“You have a Minute to win it.” Have fun and good luck.</li>
+									</ul>
+									<br>Venue: R &amp; D Block<br>Date: 25th August 2017<br>Coordinators: Albin Abraham (8547296614)<br>John Mathew (9745703277)</p>
 								</div>
 							</section>
 						</div>
